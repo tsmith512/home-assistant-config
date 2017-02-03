@@ -1,0 +1,25 @@
+- platform: darksky
+  api_key: !secret darksky_api
+  monitored_conditions:
+    - summary
+    - temperature
+    - temperature_min
+    - temperature_max
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - wind_bearing
+    - humidity
+    - precip_type
+    - precip_intensity
+    - precip_probability
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+- platform: octoprint
+  name: OctoPrint
+  monitored_conditions:
+    - Current State
+    - Temperatures
+    - Job Percentage

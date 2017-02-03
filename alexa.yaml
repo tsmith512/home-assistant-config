@@ -1,0 +1,5 @@
+intents:
+  PrinterStatusIntent:
+    speech:
+      type: plaintext
+      text: The printer is {{ states("sensor.octoprint_current_state") | lower }} {%- if is_state("binary_sensor.octoprint_printing", "on") %} and the job is {{ states("sensor.octoprint_job_percentage") }} percent complete {%- else %} and not currently printing {%- endif %}.

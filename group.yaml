@@ -1,0 +1,46 @@
+Clock:
+  - sensor.time
+  - sensor.date
+  - sun.sun
+Weather:
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_temperature
+  - sensor.dark_sky_daily_high_temperature
+  - sensor.dark_sky_daily_low_temperature
+  - sensor.dark_sky_apparent_temperature
+  - sensor.dark_sky_humidity
+  - sensor.dark_sky_dew_point
+  - sensor.dark_sky_wind_speed
+  - sensor.dark_sky_wind_bearing
+  - sensor.dark_sky_visibility
+  - sensor.dark_sky_precip
+  - sensor.dark_sky_precip_intensity
+  - sensor.dark_sky_precip_probability
+3D Printer:
+  - camera.printer_camera
+  - binary_sensor.octoprint_printing
+  - binary_sensor.octoprint_printing_error
+  - sensor.octoprint_current_state
+  - sensor.octoprint_job_percentage
+  - sensor.octoprint_actual_bed_temp
+  - sensor.octoprint_target_bed_temp
+  - sensor.octoprint_actual_tool0_temp
+  - sensor.octoprint_target_tool0_temp
+  - weblink.octopi_home
+Downstairs Lights:
+  -  light.workstation
+  -  light.kitchen
+  -  light.living_room_overhead
+  -  switch.ge_unknown_type5052_id3031_switch_3_0
+  -  switch.ge_unknown_type5052_id3031_switch_4_0
+Bedroom Lights:
+  -  light.bedroom_a
+  -  light.bedroom_b
+Downstairs Scenes:
+  - scene.full
+  - scene.low
+  - scene.blue
+Upstairs Scenes:
+  - scene.daylight
+  - scene.evening
+  - scene.candlelight

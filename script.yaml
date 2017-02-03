@@ -1,0 +1,26 @@
+upstairs_sunrise:
+  alias: Upstairs Sunrise
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: group.bedroom_lights
+        transition: 60
+        brightness: 51
+        rgb_color: [51, 51, 51]
+        color_temp: 154
+    - delay: 00:00:05
+    - service: light.turn_on
+      data:
+        entity_id: group.bedroom_lights
+        transition: 600
+        brightness: 63
+        rgb_color: [63, 63, 63]
+        color_temp: 167
+    - delay: 00:00:05
+    - service: light.turn_on
+      data:
+        entity_id: group.bedroom_lights
+        transition: 900
+        brightness: 230
+        rgb_color: [229, 229, 229]
+        color_temp: 287
