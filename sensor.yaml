@@ -1,3 +1,11 @@
+#  ___  ___ _ __  ___  ___  _ __
+# / __|/ _ \ '_ \/ __|/ _ \| '__|
+# \__ \  __/ | | \__ \ (_) | |
+# |___/\___|_| |_|___/\___/|_|
+#
+# Standard sensors, though I'm not sure a separate file was really
+# useful for this.
+
 - platform: darksky
   api_key: !secret darksky_api
   monitored_conditions:

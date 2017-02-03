@@ -1,3 +1,13 @@
+#       _
+#  __ _| | _____  ____ _
+# / _` | |/ _ \ \/ / _` |
+#| (_| | |  __/>  < (_| |
+# \__,_|_|\___/_/\_\__,_|
+#
+# Intents for Alexa to respond via the Skills API.
+# Does not include device control; Haaska handles Smart Home Skill
+# API integration. (See https://github.com/auchter/haaska)
+
 intents:
   PrinterStatusIntent:
     speech:

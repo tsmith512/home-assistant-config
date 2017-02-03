@@ -1,3 +1,12 @@
+#                _       _
+#  ___  ___ _ __(_)_ __ | |_
+# / __|/ __| '__| | '_ \| __|
+# \__ \ (__| |  | | |_) | |_
+# |___/\___|_|  |_| .__/ \__|
+#                 |_|
+#
+# Scripts for chains of actions
+
 upstairs_sunrise:
   alias: Upstairs Sunrise
   sequence:

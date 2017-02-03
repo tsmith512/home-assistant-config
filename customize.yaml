@@ -1,3 +1,11 @@
+#                 _                  _
+#   ___ _   _ ___| |_ ___  _ __ ___ (_)_______
+#  / __| | | / __| __/ _ \| '_ ` _ \| |_  / _ \
+# | (__| |_| \__ \ || (_) | | | | | | |/ /  __/
+#  \___|\__,_|___/\__\___/|_| |_| |_|_/___\___|
+#
+# Swapping out names, icons, and Haaska names/visibility (for Alexa integration)
+
 sun.sun:
   friendly_name: Sunrise / Sunset
   haaska_hidden: true
