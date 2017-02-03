@@ -9,7 +9,29 @@
 # API integration. (See https://github.com/auchter/haaska)
 
 intents:
+  # OCTOPRINT STATUS
   PrinterStatusIntent:
     speech:
       type: plaintext
-      text: The printer is {{ states("sensor.octoprint_current_state") | lower }} {%- if is_state("binary_sensor.octoprint_printing", "on") %} and the job is {{ states("sensor.octoprint_job_percentage") }} percent complete {%- else %} and not currently printing {%- endif %}.
+      text: >
+        The printer is {{ states("sensor.octoprint_current_state") | lower }}
+        {% if is_state("binary_sensor.octoprint_printing", "on") %}
+          and the job is {{ states("sensor.octoprint_job_percentage") | round }} percent complete
+        {% else %}
+          and not currently printing
+        {% endif %}.
+
+  # DARK SKY WEATHER REPORT
+  WeatherIntent:
+    speech:
+      type: plaintext
+      text: >
+        Dark Sky reports
+        {{ states('sensor.dark_sky_hourly_summary') | lower | replace('.','') }}
+        and {{ states('sensor.dark_sky_temperature') | round }} degrees.
+        It feels like {{ states('sensor.dark_sky_apparent_temperature') | round }},
+        with {{ states('sensor.dark_sky_wind_speed') | round }} mile per hour winds
+        and {{ states('sensor.dark_sky_humidity') | round }} percent humidity.
+        Today's high is {{ states('sensor.dark_sky_daily_high_temperature') | round }} degrees
+        with an overnight low of {{ states('sensor.dark_sky_daily_low_temperature') | round }}.
+        Expect {{ states('sensor.dark_sky_daily_summary') | lower }}.
