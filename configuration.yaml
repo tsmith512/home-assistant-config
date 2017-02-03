@@ -1,0 +1,463 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 30.301507
+  longitude: -97.698620
+  # C for Celsius, F for Fahrenheit
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  customize:
+    sun.sun:
+      friendly_name: Sunrise / Sunset
+      haaska_hidden: true
+    sensor.dark_sky_summary:
+      friendly_name: Currently
+      haaska_hidden: true
+    sensor.dark_sky_temperature:
+      friendly_name: Temperature
+      haaska_hidden: true
+    sensor.dark_sky_daily_high_temperature:
+      friendly_name: Today's High
+      haaska_hidden: true
+    sensor.dark_sky_daily_low_temperature:
+      friendly_name: Today's Low
+      haaska_hidden: true
+    sensor.dark_sky_apparent_temperature:
+      friendly_name: Heat Index / Wind Chill
+      haaska_hidden: true
+    sensor.dark_sky_humidity:
+      friendly_name: Humidity
+      haaska_hidden: true
+    sensor.dark_sky_dew_point:
+      friendly_name: Currently
+      haaska_hidden: true
+    sensor.dark_sky_wind_speed:
+      friendly_name: Wind Speed
+      haaska_hidden: true
+    sensor.dark_sky_wind_bearing:
+      friendly_name: Wind Direction
+      haaska_hidden: true
+    sensor.dark_sky_visibility:
+      friendly_name: Visibility
+      haaska_hidden: true
+    sensor.dark_sky_precip:
+      friendly_name: Precipitiation
+      haaska_hidden: true
+    sensor.dark_sky_precip_intensity:
+      friendly_name: Precip Intensity
+      haaska_hidden: true
+    sensor.dark_sky_precip_probability:
+      friendly_name: Precip Probability
+      haaska_hidden: true
+    binary_sensor.octoprint_printing:
+      friendly_name: Printing?
+      haaska_hidden: true
+    binary_sensor.octoprint_printing_error:
+      friendly_name: Error Reported?
+      haaska_hidden: true
+    sensor.octoprint_actual_bed_temp:
+      friendly_name: Bed Temp
+      haaska_hidden: true
+    sensor.octoprint_actual_tool0_temp:
+      friendly_name: Hotend Temp
+      haaska_hidden: true
+    sensor.octoprint_current_state:
+      friendly_name: Currently
+      haaska_hidden: true
+    sensor.octoprint_job_percentage:
+      friendly_name: Complete
+      haaska_hidden: true
+    sensor.octoprint_target_bed_temp:
+      friendly_name: Target Bed Temp
+      haaska_hidden: true
+    sensor.octoprint_target_tool0_temp:
+      friendly_name: Target Hotend Temp
+      haaska_hidden: true
+    camera.mjpeg_camera:
+      friendly_name: Printbed Camera
+      haaska_hidden: true
+    switch.ge_unknown_type5052_id3031_switch_2_0:
+      friendly_name: Desk Light
+      icon: mdi:desktop-mac
+    switch.ge_unknown_type5052_id3031_switch_3_0:
+      friendly_name: Living Room Lamp
+      icon: mdi:movie
+    switch.ge_unknown_type5052_id3031_switch_4_0:
+      friendly_name: Entertainment Shelf Lights
+      icon: mdi:movie
+    light.workstation:
+      friendly_name: Workstation Overhead
+      icon: mdi:desktop-mac
+    light.kitchen:
+      friendly_name: Kitchen Light
+      icon: mdi:food-fork-drink
+    light.bedroom_a:
+      friendly_name: Bedside Lamp N
+      icon: mdi:hotel
+      haaska_hidden: true
+    light.bedroom_b:
+      friendly_name: Bedside Lamp S
+      icon: mdi:hotel
+      haaska_hidden: true
+    light.living_room_overhead:
+      friendly_name: Living Room Overhead
+      icon: mdi:movie
+    group.all_lights:
+      haaska_hidden: true
+    group.all_switches:
+      haaska_hidden: true
+    group.all_devices:
+      haaska_hidden: true
+    group.clock:
+      haaska_hidden: true
+    group.time_warner_cable:
+      haaska_hidden: true
+    group.weather:
+      haaska_hidden: true
+    group.downstairs_lights:
+      haaska_name: Downstairs
+    group.bedroom_lights:
+      haaska_name: Bedroom
+    group.downstairs_scenes:
+      haaska_hidden: true
+      icon: mdi:numeric-1-box
+    group.upstairs_scenes:
+      haaska_hidden: true
+      icon: mdi:numeric-2-box
+    scene.daylight:
+      icon: mdi:white-balance-sunny
+    scene.evening:
+      icon: mdi:white-balance-incandescent
+    scene.candlelight:
+      icon: mdi:weather-night
+    scene.full:
+      icon: mdi:white-balance-sunny
+    scene.low:
+      icon: mdi:white-balance-incandescent
+    scene.blue:
+      icon: mdi:white-balance-iridescent
+    script.upstairs_sunrise:
+      icon: mdi:weather-sunset-up
+    weblink.octopi_home:
+      icon: mdi:link-variant
+
+http:
+  api_password: !secret http_password
+  ssl_certificate: /home/hass/.homeassistant/cert.pem
+  ssl_key: /home/hass/.homeassistant/key.pem
+
+# View all events in a logbook
+logbook:
+
+# Enables the frontend
+frontend:
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Allows you to issue voice commands from the frontend
+conversation:
+
+# Checks for available updates
+updater:
+
+# Track the sun
+sun:
+
+# Discover some devices automatically
+discovery:
+
+zone:
+  name: Home
+  latitude: 30.301507
+  longitude: -97.698620
+  radius: 250
+  icon: mdi:home-variant
+
+sensor:
+  - platform: darksky
+    api_key: !secret darksky_api
+    monitored_conditions:
+      - summary
+      - temperature
+      - temperature_min
+      - temperature_max
+      - apparent_temperature
+      - dew_point
+      - wind_speed
+      - wind_bearing
+      - humidity
+      - precip_type
+      - precip_intensity
+      - precip_probability
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+  - platform: octoprint
+    name: OctoPrint
+    monitored_conditions:
+      - Current State
+      - Temperatures
+      - Job Percentage
+
+binary_sensor:
+  - platform: octoprint
+    monitored_conditions:
+      - Printing
+      - Printing Error
+
+camera:
+  - platform: mjpeg
+    name: Printer Camera
+    mjpeg_url: http://192.168.1.49/webcam/?action=stream
+    still_image_url: http://192.168.1.49/webcam/?action=snapshot
+
+light:
+  - platform: lifx
+
+zwave:
+  usb_path: /dev/ttyACM0
+  config_path: /srv/hass/src/open-zwave-control-panel/config
+  polling_interval: 120000
+
+ifttt:
+  key: !secret ifttt_api
+
+octoprint:
+  host: 192.168.1.49
+  api_key: !secret octoprint_api
+
+weblink:
+  entities:
+    - name: OctoPi Home
+      url: https://192.168.1.49
+
+group:
+  Clock:
+    - sensor.time
+    - sensor.date
+    - sun.sun
+  Weather:
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_dew_point
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_visibility
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
+  3D Printer:
+    - camera.printer_camera
+    - binary_sensor.octoprint_printing
+    - binary_sensor.octoprint_printing_error
+    - sensor.octoprint_current_state
+    - sensor.octoprint_job_percentage
+    - sensor.octoprint_actual_bed_temp
+    - sensor.octoprint_target_bed_temp
+    - sensor.octoprint_actual_tool0_temp
+    - sensor.octoprint_target_tool0_temp
+    - weblink.octopi_home
+  Downstairs Lights:
+    -  light.workstation
+    -  light.kitchen
+    -  light.living_room_overhead
+    -  switch.ge_unknown_type5052_id3031_switch_3_0
+    -  switch.ge_unknown_type5052_id3031_switch_4_0
+  Bedroom Lights:
+    -  light.bedroom_a
+    -  light.bedroom_b
+  Downstairs Scenes:
+    - scene.full
+    - scene.low
+    - scene.blue
+  Upstairs Scenes:
+    - scene.daylight
+    - scene.evening
+    - scene.candlelight
+
+notify:
+  - platform: pushbullet
+    api_key: !secret pushbullet_api
+    name: pushbullet
+
+automation:
+  - alias: Notify on Hass Startup
+    trigger:
+      platform: event
+      event_type: homeassistant_start
+    action:
+      service: notify.pushbullet
+      data:
+        message: Home Assistant has been initialized.
+        title: Hass Startup
+  - alias: Notify on Hass Shutdown
+    trigger:
+      platform: event
+      event_type: homeassistant_stop
+    action:
+      service: notify.pushbullet
+      data:
+        message: Home Assistant is processing a shutdown or restart.
+        title: Hass Shutdown
+  - alias: Sunrise
+    trigger:
+      platform: time
+      after: "07:00:00"
+    condition:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+    action:
+      service: script.upstairs_sunrise
+  - alias: Notify on Print Complete
+    trigger:
+      platform: state
+      entity_id: binary_sensor.octoprint_printing
+      from: 'on'
+      to: 'off'
+    action:
+      service: notify.pushbullet
+      data:
+        message: Octoprint has stopped printing.
+        title: Octoprint
+script:
+  upstairs_sunrise:
+    alias: Upstairs Sunrise
+    sequence:
+      - service: light.turn_on
+        data:
+          entity_id: group.bedroom_lights
+          transition: 60
+          brightness: 51
+          rgb_color: [51, 51, 51]
+          color_temp: 154
+      - delay: 00:00:05
+      - service: light.turn_on
+        data:
+          entity_id: group.bedroom_lights
+          transition: 600
+          brightness: 63
+          rgb_color: [63, 63, 63]
+          color_temp: 167
+      - delay: 00:00:05
+      - service: light.turn_on
+        data:
+          entity_id: group.bedroom_lights
+          transition: 900
+          brightness: 230
+          rgb_color: [229, 229, 229]
+          color_temp: 287
+
+scene:
+  - name: Full
+    entities:
+      light.workstation:
+        state: on
+        transition: 2
+        color_temp: 191
+        brightness: 204
+        rgb_color: [204, 204, 204]
+      light.kitchen:
+        state: on
+        transition: 2
+        color_temp: 191
+        brightness: 204
+        rgb_color: [204, 204, 204]
+      light.living_room_overhead:
+        state: on
+        transition: 2
+        color_temp: 191
+        brightness: 204
+        rgb_color: [204, 204, 204]
+      switch.ge_unknown_type5052_id3031_switch_3_0:
+        state: on
+      switch.ge_unknown_type5052_id3031_switch_4_0:
+        state: on
+  - name: Low
+    entities:
+      light.workstation:
+        state: on
+        transition: 2
+        color_temp: 154
+        brightness: 78
+        rgb_color: [77, 77, 77]
+      light.kitchen:
+        state: on
+        transition: 2
+        color_temp: 154
+        brightness: 78
+        rgb_color: [77, 77, 77]
+      light.living_room_overhead:
+        state: on
+        transition: 2
+        color_temp: 154
+        brightness: 78
+        rgb_color: [77, 77, 77]
+      switch.ge_unknown_type5052_id3031_switch_3_0:
+        state: on
+      switch.ge_unknown_type5052_id3031_switch_4_0:
+        state: on
+  - name: Blue
+    entities:
+      light.workstation:
+        state: on
+        transition: 2
+        brightness: 150
+        rgb_color: [15, 30, 160]
+      light.kitchen:
+        state: on
+        transition: 2
+        brightness: 150
+        rgb_color: [15, 30, 160]
+      light.living_room_overhead:
+        state: on
+        transition: 2
+        brightness: 150
+        rgb_color: [15, 30, 160]
+      switch.ge_unknown_type5052_id3031_switch_3_0:
+        state: on
+      switch.ge_unknown_type5052_id3031_switch_4_0:
+        state: on
+  - name: Daylight
+    entities:
+      group.bedroom_lights:
+        state: on
+        transition: 2
+        brightness: 230
+        rgb_color: [229, 229, 229]
+        color_temp: 287
+  - name: Evening
+    entities:
+      group.bedroom_lights:
+        state: on
+        transition: 2
+        brightness: 93
+        rgb_color: [93, 93, 93]
+        color_temp: 167
+  - name: Candlelight
+    entities:
+      group.bedroom_lights:
+        state: on
+        transition: 10
+        brightness: 51
+        rgb_color: [51, 51, 51]
+        color_temp: 154
+
+alexa:
+  intents:
+    PrinterStatusIntent:
+      speech:
+        type: plaintext
+        text: The printer is {{ states("sensor.octoprint_current_state") | lower }} {%- if is_state("binary_sensor.octoprint_printing", "on") %} and the job is {{ states("sensor.octoprint_job_percentage") }} percent complete {%- else %} and not currently printing {%- endif %}.
