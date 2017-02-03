@@ -14,6 +14,12 @@ sun.sun:
 sensor.dark_sky_summary:
   friendly_name: Currently
   haaska_hidden: true
+sensor.dark_sky_hourly_summary:
+  friendly_name: Today
+  haaska_hidden: true
+sensor.dark_sky_daily_summary:
+  friendly_name: This Week
+  haaska_hidden: true
 sensor.dark_sky_temperature:
   friendly_name: Temperature
   haaska_hidden: true
