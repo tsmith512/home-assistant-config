@@ -9,6 +9,8 @@
 sun.sun:
   friendly_name: Sunrise / Sunset
   haaska_hidden: true
+
+# DARK SKY
 sensor.dark_sky_summary:
   friendly_name: Currently
   haaska_hidden: true
@@ -48,6 +50,8 @@ sensor.dark_sky_precip_intensity:
 sensor.dark_sky_precip_probability:
   friendly_name: Precip Probability
   haaska_hidden: true
+
+# OCTOPRINT
 binary_sensor.octoprint_printing:
   friendly_name: Printing?
   haaska_hidden: true
@@ -75,6 +79,8 @@ sensor.octoprint_target_tool0_temp:
 camera.mjpeg_camera:
   friendly_name: Printbed Camera
   haaska_hidden: true
+
+# ZWAVE SWITCHES
 switch.ge_unknown_type5052_id3031_switch_2_0:
   friendly_name: Desk Light
   icon: mdi:desktop-mac
@@ -84,6 +90,8 @@ switch.ge_unknown_type5052_id3031_switch_3_0:
 switch.ge_unknown_type5052_id3031_switch_4_0:
   friendly_name: Entertainment Shelf Lights
   icon: mdi:movie
+
+# LIFX BULBS
 light.workstation:
   friendly_name: Workstation Overhead
   icon: mdi:desktop-mac
@@ -101,6 +109,8 @@ light.bedroom_b:
 light.living_room_overhead:
   friendly_name: Living Room Overhead
   icon: mdi:movie
+
+# GROUPS
 group.all_lights:
   haaska_hidden: true
 group.all_switches:
@@ -123,6 +133,8 @@ group.downstairs_scenes:
 group.upstairs_scenes:
   haaska_hidden: true
   icon: mdi:numeric-2-box
+
+# SCENES
 scene.daylight:
   icon: mdi:white-balance-sunny
 scene.evening:
@@ -137,5 +149,7 @@ scene.blue:
   icon: mdi:white-balance-iridescent
 script.upstairs_sunrise:
   icon: mdi:weather-sunset-up
+
+# MISC
 weblink.octopi_home:
   icon: mdi:link-variant

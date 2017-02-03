@@ -7,6 +7,9 @@
 #
 # Scripts for chains of actions
 
+# Fake a "sunrise" in a futile attempt to make mornings less awful.
+# Start at the equivalent of scene.candlelight and shift to
+# scene.daylight over the course of half an hour.
 upstairs_sunrise:
   alias: Upstairs Sunrise
   sequence:

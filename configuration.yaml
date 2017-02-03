@@ -7,47 +7,55 @@
 # Home Assistant (https://home-assistant.io) configuration for
 # tsmith512's otherwise rather disorganized apartment.
 
+### BASICS:
+
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
   latitude: 30.301507
   longitude: -97.698620
-  # C for Celsius, F for Fahrenheit
   unit_system: imperial
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Chicago
   customize: !include customize.yaml
+
+
+### STANDARD COMPONENTS WITHOUT CONFIGURATION:
+
+# Enable frontend
+frontend:
+
+# Record events
+logbook:
+
+# Voice commends in frontend
+conversation:
+
+# Check for updates
+updater:
+
+# Track sunrise/sunset
+sun:
+
+# Auto discovery service
+discovery:
+
+
+### STARTER COMPONENTS
 
 http:
   api_password: !secret http_password
   ssl_certificate: /home/hass/.homeassistant/cert.pem
   ssl_key: /home/hass/.homeassistant/key.pem
 
-# View all events in a logbook
-logbook:
-
-# Enables the frontend
-frontend:
-
-# Allows you to issue voice commands from the frontend
-conversation:
-
-# Checks for available updates
-updater:
-
-# Track the sun
-sun:
-
-# Discover some devices automatically
-discovery:
-
+# @TODO: There's no presence detection here; unnecessary?
 zone:
   name: Home
   latitude: 30.301507
   longitude: -97.698620
   radius: 250
   icon: mdi:home-variant
+
+
+### SENSORS, DEVICES, AND SERVICE INTEGRATIONS
 
 sensor: !include sensor.yaml
 
@@ -83,12 +91,16 @@ weblink:
     - name: OctoPi Home
       url: https://192.168.1.49
 
-group: !include group.yaml
 
 notify:
   - platform: pushbullet
     api_key: !secret pushbullet_api
     name: pushbullet
+
+
+### EXTERNAL CONFIGURATION SECTIONS
+
+group: !include group.yaml
 
 automation: !include automation.yaml
 

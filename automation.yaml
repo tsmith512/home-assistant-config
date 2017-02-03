@@ -5,6 +5,7 @@
 #  \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|
 #
 
+# HOME ASSISTANT STATUS
 - alias: Notify on Hass Startup
   trigger:
     platform: event
@@ -23,6 +24,8 @@
     data:
       message: Home Assistant is processing a shutdown or restart.
       title: Hass Shutdown
+
+# SCENE AUTOMATION
 - alias: Sunrise
   trigger:
     platform: time
@@ -37,6 +40,8 @@
         - fri
   action:
     service: script.upstairs_sunrise
+
+# OCTOPRINT
 - alias: Notify on Print Complete
   trigger:
     platform: state
