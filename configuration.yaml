@@ -54,8 +54,8 @@ tts:
 
 http:
   api_password: !secret http_password
-  ssl_certificate: /home/hass/.homeassistant/cert.pem
-  ssl_key: /home/hass/.homeassistant/key.pem
+  ssl_certificate: /home/homeassistant/.homeassistant/cert.pem
+  ssl_key: /home/homeassistant/.homeassistant/key.pem
 
 # @TODO: There's no presence detection here; unnecessary?
 zone:
