@@ -11,8 +11,8 @@
 
 homeassistant:
   name: Home
-  latitude: 30.301507
-  longitude: -97.698620
+  latitude: !secret loc_latitude
+  longitude: !secret loc_longitude
   elevation: 188
   unit_system: imperial
   time_zone: America/Chicago
@@ -60,8 +60,8 @@ http:
 # @TODO: There's no presence detection here; unnecessary?
 zone:
   name: Home
-  latitude: 30.301507
-  longitude: -97.698620
+  latitude: !secret loc_latitude
+  longitude: !secret loc_longitude
   radius: 250
   icon: mdi:home-variant
 
