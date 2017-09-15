@@ -11,21 +11,18 @@
     light.workstation:
       state: on
       transition: 2
-      color_temp: 191
+      kelvin: 3600
       brightness: 204
-      rgb_color: [204, 204, 204]
     light.kitchen:
       state: on
       transition: 2
-      color_temp: 191
+      kelvin: 3600
       brightness: 204
-      rgb_color: [204, 204, 204]
     light.living_room_overhead:
       state: on
       transition: 2
-      color_temp: 191
+      kelvin: 3600
       brightness: 204
-      rgb_color: [204, 204, 204]
     switch.ge_unknown_type5052_id3031_switch_3_0:
       state: on
     switch.ge_unknown_type5052_id3031_switch_4_0:
@@ -35,21 +32,18 @@
     light.workstation:
       state: on
       transition: 2
-      color_temp: 154
+      kelvin: 3000
       brightness: 78
-      rgb_color: [77, 77, 77]
     light.kitchen:
       state: on
       transition: 2
-      color_temp: 154
+      kelvin: 3000
       brightness: 78
-      rgb_color: [77, 77, 77]
     light.living_room_overhead:
       state: on
       transition: 2
-      color_temp: 154
+      kelvin: 3000
       brightness: 78
-      rgb_color: [77, 77, 77]
     switch.ge_unknown_type5052_id3031_switch_3_0:
       state: on
     switch.ge_unknown_type5052_id3031_switch_4_0:
@@ -83,21 +77,18 @@
       state: on
       transition: 2
       brightness: 230
-      rgb_color: [229, 229, 229]
-      color_temp: 287
+      kelvin: 4200
 - name: Evening
   entities:
     group.bedroom_lights:
       state: on
       transition: 2
       brightness: 93
-      rgb_color: [93, 93, 93]
-      color_temp: 167
+      kelvin: 3000
 - name: Candlelight
   entities:
     group.bedroom_lights:
       state: on
       transition: 10
       brightness: 51
-      rgb_color: [51, 51, 51]
-      color_temp: 154
+      kelvin: 2700

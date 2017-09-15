@@ -87,8 +87,7 @@ light:
 
 zwave:
   usb_path: /dev/ttyACM0
-  config_path: /srv/hass/src/open-zwave-control-panel/config
-  polling_interval: 120000
+  new_entity_ids: false
 
 ifttt:
   key: !secret ifttt_api
