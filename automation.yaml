@@ -8,19 +8,20 @@
 # HOME ASSISTANT STATUS
 - alias: Notify on Hass Startup
   trigger:
-    platform: event
-    event_type: homeassistant_start
+  - event: start
+    platform: homeassistant
   action:
-    service: notify.pushbullet
+  - service: notify.pushbullet
     data:
       message: Home Assistant has been initialized.
       title: Hass Startup
+
 - alias: Notify on Hass Shutdown
   trigger:
-    platform: event
-    event_type: homeassistant_stop
+  - event: shutdown
+    platform: homeassistant
   action:
-    service: notify.pushbullet
+  - service: notify.pushbullet
     data:
       message: Home Assistant is processing a shutdown or restart.
       title: Hass Shutdown
@@ -28,8 +29,8 @@
 # SCENE AUTOMATION
 - alias: Sunrise
   trigger:
-    platform: time
-    after: "07:00:00"
+  - platform: time
+    at: "07:00:00"
   condition:
     - condition: time
       weekday:
@@ -39,17 +40,17 @@
         - thu
         - fri
   action:
-    service: script.upstairs_sunrise
+  - service: script.upstairs_sunrise
 
 # OCTOPRINT
 - alias: Notify on Print Complete
   trigger:
-    platform: state
+  - platform: state
     entity_id: binary_sensor.octoprint_printing
     from: 'on'
     to: 'off'
   action:
-    service: notify.pushbullet
+  - service: notify.pushbullet
     data:
       message: Octoprint has stopped printing.
       title: Octoprint
