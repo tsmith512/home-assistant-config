@@ -13,6 +13,7 @@ homeassistant:
   name: Home
   latitude: 30.301507
   longitude: -97.698620
+  elevation: 188
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include customize.yaml
