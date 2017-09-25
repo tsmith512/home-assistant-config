@@ -11,8 +11,9 @@
 
 homeassistant:
   name: Home
-  latitude: 30.301507
-  longitude: -97.698620
+  latitude: !secret loc_latitude
+  longitude: !secret loc_longitude
+  elevation: 188
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include customize.yaml
@@ -26,11 +27,15 @@ frontend:
 # Record events
 logbook:
 
+# Enable the Config UI
+config:
+
 # Voice commends in frontend
 conversation:
 
 # Check for updates
 updater:
+  include_used_components: true
 
 # Track sunrise/sunset
 sun:
@@ -38,19 +43,25 @@ sun:
 # Auto discovery service
 discovery:
 
+# Enables support for tracking state changes over time
+history:
+
+# Text to speech
+tts:
+  - platform: google
 
 ### STARTER COMPONENTS
 
 http:
   api_password: !secret http_password
-  ssl_certificate: /home/hass/.homeassistant/cert.pem
-  ssl_key: /home/hass/.homeassistant/key.pem
+  ssl_certificate: /home/homeassistant/.homeassistant/cert.pem
+  ssl_key: /home/homeassistant/.homeassistant/key.pem
 
 # @TODO: There's no presence detection here; unnecessary?
 zone:
   name: Home
-  latitude: 30.301507
-  longitude: -97.698620
+  latitude: !secret loc_latitude
+  longitude: !secret loc_longitude
   radius: 250
   icon: mdi:home-variant
 
@@ -76,8 +87,7 @@ light:
 
 zwave:
   usb_path: /dev/ttyACM0
-  config_path: /srv/hass/src/open-zwave-control-panel/config
-  polling_interval: 120000
+  new_entity_ids: false
 
 ifttt:
   key: !secret ifttt_api
