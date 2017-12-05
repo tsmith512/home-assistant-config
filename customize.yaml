@@ -128,7 +128,15 @@ group.all_lights:
 group.all_switches:
   haaska_hidden: true
 group.all_devices:
+  friendly_name: Devices
   haaska_hidden: true
+  hidden: false
+group.all_automations:
+  friendly_name: Automations
+  hidden: false
+group.all_scripts:
+  friendly_name: Scripts
+  hidden: false
 group.clock:
   haaska_hidden: true
 group.time_warner_cable:
