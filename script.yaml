@@ -15,21 +15,21 @@ upstairs_sunrise:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: group.bedroom_lights
+        entity_id: group.lights_bedroom
         transition: 60
         brightness: 51
         kelvin: 2700
     - delay: 00:00:05
     - service: light.turn_on
       data:
-        entity_id: group.bedroom_lights
+        entity_id: group.lights_bedroom
         transition: 600
         brightness: 63
         kelvin: 3600
     - delay: 00:00:05
     - service: light.turn_on
       data:
-        entity_id: group.bedroom_lights
+        entity_id: group.lights_bedroom
         transition: 900
         brightness: 230
         kelvin: 4200

@@ -73,21 +73,21 @@
 # UPSTAIRS SCENES
 - name: Daylight
   entities:
-    group.bedroom_lights:
+    group.lights_bedroom:
       state: on
       transition: 2
       brightness: 230
       kelvin: 4200
 - name: Evening
   entities:
-    group.bedroom_lights:
+    group.lights_bedroom:
       state: on
       transition: 2
       brightness: 93
       kelvin: 3000
 - name: Candlelight
   entities:
-    group.bedroom_lights:
+    group.lights_bedroom:
       state: on
       transition: 10
       brightness: 51
