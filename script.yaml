@@ -33,3 +33,16 @@ upstairs_sunrise:
         transition: 900
         brightness: 230
         kelvin: 4200
+
+downstairs_lights_on:
+  alias: Downstairs Lights On
+  sequence:
+    - service: scene.turn_on
+      data_template:
+        entity_id: >
+          scene.downstairs_
+          {%-  if now().hour < 7 %}night
+          {% elif now().hour < 17 %}daylight
+          {% elif now().hour < 19 %}evening
+          {% elif now().hour >= 21 %}night
+          {% endif %}
