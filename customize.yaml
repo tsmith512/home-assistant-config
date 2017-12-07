@@ -161,12 +161,16 @@ scene.evening:
   icon: mdi:white-balance-incandescent
 scene.candlelight:
   icon: mdi:weather-night
-scene.full:
-  icon: mdi:white-balance-sunny
-scene.low:
-  icon: mdi:white-balance-incandescent
-scene.blue:
-  icon: mdi:white-balance-iridescent
+scene.downstairs_daylight:
+  icon: mdi:weather-sunny
+scene.downstairs_afternoon:
+  icon: mdi:weather-sunset
+scene.downstairs_evening:
+  icon: mdi:weather-sunset-down
+scene.downstairs_night:
+  icon: mdi:weather-night
+
+# SCRIPTS
 script.upstairs_sunrise:
   icon: mdi:weather-sunset-up
 

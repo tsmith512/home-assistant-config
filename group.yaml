@@ -39,9 +39,10 @@ lights_upstairs:
 scenes_downstairs:
   name: Downstairs Scenes
   entities:
-    - scene.full
-    - scene.low
-    - scene.blue
+    - scene.downstairs_daylight
+    - scene.downstairs_afternoon
+    - scene.downstairs_evening
+    - scene.downstairs_night
 scenes_upstairs:
   name: Upstairs Scenes
   entities:
