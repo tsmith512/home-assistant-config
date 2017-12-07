@@ -42,6 +42,34 @@
   action:
   - service: script.upstairs_sunrise
 
+- alias: Downstairs Sunlight
+  trigger:
+    - platform: time
+      at: "17:00:00"
+    - platform: time
+      at: "19:00:00"
+    - platform: time
+      at: "21:00:00"
+  condition:
+    # Test two lights, in case one is offline
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'light.workstation'
+        state: 'on'
+      - condition: state
+        entity_id: 'light.kitchen'
+        state: 'on'
+  action:
+    - service: scene.turn_on
+      data_template:
+        entity_id: >
+          scene.downstairs_{% if now().hour <= 17 %}afternoon{% elif now().hour >= 21 %}night{% else %}evening{% endif %}
+    - service: notify.notify
+      data_template:
+        message: >
+          Switching to scene.downstairs_{% if now().hour <= 17 %}afternoon{% elif now().hour >= 21 %}night{% else %}evening{% endif %}
+
 # OCTOPRINT
 - alias: Notify on Print Complete
   trigger:
