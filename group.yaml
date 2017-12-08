@@ -17,6 +17,7 @@ default_view:
     - group.lights_bedroom
     - group.lights_upstairs
     - group.scenes_upstairs
+    - group.climate
 
 lights_downstairs:
   name: Downstairs Lights
@@ -55,6 +56,12 @@ clock:
     - sensor.time
     - sensor.date
     - sun.sun
+climate:
+  name: Climate
+  entities:
+    - sensor.2gig_technologies_ct101_thermostat_iris_temperature_5_1
+    - climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+    - climate.2gig_technologies_ct101_thermostat_iris_heating_1_5_1
 
 weather:
   name: Weather

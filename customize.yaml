@@ -77,6 +77,17 @@ switch.ge_unknown_type5052_id3031_switch_4_0:
   friendly_name: Entertainment Shelf Lights
   icon: mdi:movie
 
+# ZWAVE THERMOSTAT
+sensor.2gig_technologies_ct101_thermostat_iris_temperature_5_1:
+  friendly_name: Indoor Temperature
+  icon: mdi:temperature-fahrenheit
+climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2:
+  friendly_name: A/C
+  icon: mdi:snowflake
+climate.2gig_technologies_ct101_thermostat_iris_heating_1_5_1:
+  friendly_name: Heater
+  icon: mdi:fire
+
 # LIFX BULBS
 light.workstation:
   friendly_name: Workstation Overhead
@@ -121,6 +132,8 @@ group.upstairs_scenes:
   haaska_hidden: true
   icon: mdi:numeric-2-box
 group.auto_view:
+  haaska_hidden: true
+group.climate:
   haaska_hidden: true
 
 # SCENES

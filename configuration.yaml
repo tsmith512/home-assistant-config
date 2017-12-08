@@ -100,6 +100,9 @@ camera:
 light:
   - platform: lifx
 
+climate:
+  - platform: zwave
+
 zwave:
   usb_path: /dev/ttyACM0
   new_entity_ids: false
