@@ -17,7 +17,22 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include customize.yaml
-
+  customize_domain:
+    sensor:
+      haaska_hidden: true
+    binary_sensor:
+      haaska_hidden: true
+  customize_glob:
+    "sensor.dark_sky*":
+      haaska_hidden: true
+    "group.all_*":
+      haaska_hidden: true
+    "group.*_scenes":
+      haaska_hidden: true
+    "group.weather*":
+      haaska_hidden: true
+    "group.printer*":
+      haaska_hidden: true
 
 ### STANDARD COMPONENTS WITHOUT CONFIGURATION:
 
