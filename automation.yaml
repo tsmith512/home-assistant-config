@@ -60,6 +60,23 @@
   action:
     - service: script.downstairs_lights_on
 
+- alias: Christmas lights on at dusk
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+    service: switch.turn_on
+    entity_id: switch.switch_6_0
+
+- alias: Christmas lights off late
+  trigger:
+    platform: time
+    at: "01:00:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.switch_6_0
+
 # OCTOPRINT
 - alias: Notify on Print Complete
   trigger:
