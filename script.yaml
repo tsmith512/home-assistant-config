@@ -46,3 +46,16 @@ downstairs_lights_on:
           {% elif now().hour < 19 %}evening
           {% elif now().hour >= 21 %}night
           {% endif %}
+
+climate_run_fan_hour:
+  alias: Run HVAC Fan
+  sequence:
+    - service: climate.set_fan_mode
+      data:
+        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+        fan_mode: 'On Low'
+    - delay: 01:00:00
+    - service: climate.set_fan_mode
+      data:
+        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+        fan_mode: 'Auto Low'

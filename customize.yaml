@@ -158,6 +158,9 @@ scene.downstairs_night:
 # SCRIPTS
 script.upstairs_sunrise:
   icon: mdi:weather-sunset-up
+script.climate_run_fan_hour:
+  haaska_hidden: false
+  hasska_name: fan
 
 # MISC
 weblink.octopi_home:
