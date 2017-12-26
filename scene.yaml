@@ -6,44 +6,86 @@
 # Preset scenes for LIFX and ZWave lights
 
 # DOWNSTAIRS SCENES
-- name: Full
+- name: Downstairs Daylight
   entities:
     light.workstation:
       state: on
       transition: 2
-      kelvin: 3600
-      brightness: 204
+      kelvin: 3800
+      brightness: 216
     light.kitchen:
       state: on
       transition: 2
-      kelvin: 3600
-      brightness: 204
+      kelvin: 3800
+      brightness: 216
     light.living_room_overhead:
       state: on
       transition: 2
-      kelvin: 3600
-      brightness: 204
+      kelvin: 3800
+      brightness: 216
     switch.ge_unknown_type5052_id3031_switch_3_0:
       state: on
     switch.ge_unknown_type5052_id3031_switch_4_0:
       state: on
-- name: Low
+- name: Downstairs Afternoon
   entities:
     light.workstation:
       state: on
-      transition: 2
-      kelvin: 3000
-      brightness: 78
+      transition: 5
+      kelvin: 3200
+      brightness: 165
     light.kitchen:
       state: on
-      transition: 2
-      kelvin: 3000
-      brightness: 78
+      transition: 5
+      kelvin: 3200
+      brightness: 165
     light.living_room_overhead:
       state: on
-      transition: 2
+      transition: 5
+      kelvin: 3200
+      brightness: 165
+    switch.ge_unknown_type5052_id3031_switch_3_0:
+      state: on
+    switch.ge_unknown_type5052_id3031_switch_4_0:
+      state: on
+- name: Downstairs Evening
+  entities:
+    light.workstation:
+      state: on
+      transition: 5
       kelvin: 3000
-      brightness: 78
+      brightness: 140
+    light.kitchen:
+      state: on
+      transition: 5
+      kelvin: 3000
+      brightness: 140
+    light.living_room_overhead:
+      state: on
+      transition: 5
+      kelvin: 3000
+      brightness: 140
+    switch.ge_unknown_type5052_id3031_switch_3_0:
+      state: on
+    switch.ge_unknown_type5052_id3031_switch_4_0:
+      state: on
+- name: Downstairs Night
+  entities:
+    light.workstation:
+      state: on
+      transition: 5
+      kelvin: 2800
+      brightness: 80
+    light.kitchen:
+      state: on
+      transition: 5
+      kelvin: 2800
+      brightness: 80
+    light.living_room_overhead:
+      state: on
+      transition: 5
+      kelvin: 2800
+      brightness: 80
     switch.ge_unknown_type5052_id3031_switch_3_0:
       state: on
     switch.ge_unknown_type5052_id3031_switch_4_0:
@@ -73,21 +115,21 @@
 # UPSTAIRS SCENES
 - name: Daylight
   entities:
-    group.bedroom_lights:
+    group.lights_bedroom:
       state: on
       transition: 2
       brightness: 230
       kelvin: 4200
 - name: Evening
   entities:
-    group.bedroom_lights:
+    group.lights_bedroom:
       state: on
       transition: 2
       brightness: 93
       kelvin: 3000
 - name: Candlelight
   entities:
-    group.bedroom_lights:
+    group.lights_bedroom:
       state: on
       transition: 10
       brightness: 51

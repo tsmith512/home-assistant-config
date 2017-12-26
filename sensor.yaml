@@ -10,6 +10,7 @@
   api_key: !secret darksky_api
   monitored_conditions:
     - summary
+    - icon
     - daily_summary
     - hourly_summary
     - temperature
@@ -20,6 +21,7 @@
     - wind_speed
     - wind_bearing
     - humidity
+    - pressure
     - precip_type
     - precip_intensity
     - precip_probability

@@ -42,6 +42,36 @@
   action:
   - service: script.upstairs_sunrise
 
+- alias: Downstairs Sunlight
+  trigger:
+    - platform: time
+      minutes: 00
+      seconds: 00
+  condition:
+    # Test two lights, in case one is offline
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'light.workstation'
+        state: 'on'
+      - condition: state
+        entity_id: 'light.kitchen'
+        state: 'on'
+  action:
+    - service: script.downstairs_lights_on
+
+- alias: Christmas Lights Auto
+  trigger:
+  - platform: time
+    at: "01:00:00"
+  - platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+    service_template: >
+      switch.turn_{% if states('sun.sun') == "above_horizon" %}on{% else %}off{% endif %}
+    entity_id: switch.switch_6_0
+
 # OCTOPRINT
 - alias: Notify on Print Complete
   trigger:
