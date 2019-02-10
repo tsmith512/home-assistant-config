@@ -70,7 +70,7 @@
   action:
     service_template: >
       switch.turn_{% if states('sun.sun') == "above_horizon" %}on{% else %}off{% endif %}
-    entity_id: switch.switch_6_0
+    entity_id: zwave.ge_12719_plug_in_smart_switch
 
 # OCTOPRINT
 - alias: Notify on Print Complete

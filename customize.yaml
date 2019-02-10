@@ -67,16 +67,16 @@ camera.mjpeg_camera:
   friendly_name: Printbed Camera
 
 # ZWAVE SWITCHES
-switch.ge_unknown_type5052_id3031_switch_2_0:
+zwave.ge_unknown_type_5052_id_3031:
   friendly_name: Desk Light
   icon: mdi:desktop-mac
-switch.ge_unknown_type5052_id3031_switch_3_0:
+zwave.ge_unknown_type_5052_id_3031_2:
   friendly_name: Living Room Lamp
   icon: mdi:movie
-switch.ge_unknown_type5052_id3031_switch_4_0:
+zwave.ge_unknown_type_5052_id_3031_3:
   friendly_name: Entertainment Shelf Lights
   icon: mdi:movie
-switch.switch_6_0:
+zwave.ge_12719_plug_in_smart_switch:
   friendly_name: Christmas Lights
   icon: mdi:pine-tree
 

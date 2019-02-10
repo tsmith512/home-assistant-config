@@ -25,9 +25,9 @@ lights_downstairs:
     -  light.workstation
     -  light.kitchen
     -  light.living_room_overhead
-    -  switch.ge_unknown_type5052_id3031_switch_3_0
-    -  switch.ge_unknown_type5052_id3031_switch_4_0
-    -  switch.ge_unknown_type5052_id3031_switch_2_0
+    -  zwave.ge_unknown_type_5052_id_3031_2
+    -  zwave.ge_unknown_type_5052_id_3031_3
+    -  zwave.ge_unknown_type_5052_id_3031
 lights_bedroom:
   name: Bedroom Lights
   entities:
@@ -37,7 +37,7 @@ lights_upstairs:
   name: Upstairs Lights
   entities:
     - light.workshop
-    - switch.switch_6_0
+    - zwave.ge_12719_plug_in_smart_switch
 scenes_downstairs:
   name: Downstairs Scenes
   entities:
