@@ -17,7 +17,22 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize: !include customize.yaml
-
+  customize_domain:
+    sensor:
+      haaska_hidden: true
+    binary_sensor:
+      haaska_hidden: true
+  customize_glob:
+    "sensor.dark_sky*":
+      haaska_hidden: true
+    "group.all_*":
+      haaska_hidden: true
+    "group.*_scenes":
+      haaska_hidden: true
+    "group.weather*":
+      haaska_hidden: true
+    "group.printer*":
+      haaska_hidden: true
 
 ### STANDARD COMPONENTS WITHOUT CONFIGURATION:
 
@@ -79,11 +94,16 @@ binary_sensor:
 camera:
   - platform: mjpeg
     name: Printer Camera
-    mjpeg_url: http://192.168.1.49/webcam/?action=stream
-    still_image_url: http://192.168.1.49/webcam/?action=snapshot
+    mjpeg_url: http://10.0.1.11/webcam/?action=stream
+    still_image_url: http://10.0.1.11/webcam/?action=snapshot
 
 light:
   - platform: lifx
+    server: !secret iot_wifi_server
+    broadcast: !secret iot_wifi_broadcast
+
+climate:
+  - platform: zwave
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -93,13 +113,13 @@ ifttt:
   key: !secret ifttt_api
 
 octoprint:
-  host: 192.168.1.49
+  host: 10.0.1.11
   api_key: !secret octoprint_api
 
 weblink:
   entities:
     - name: OctoPi Home
-      url: https://192.168.1.49
+      url: https://10.0.1.11
 
 
 notify:

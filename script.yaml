@@ -15,21 +15,47 @@ upstairs_sunrise:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: group.bedroom_lights
+        entity_id: group.lights_bedroom
         transition: 60
         brightness: 51
         kelvin: 2700
     - delay: 00:00:05
     - service: light.turn_on
       data:
-        entity_id: group.bedroom_lights
+        entity_id: group.lights_bedroom
         transition: 600
         brightness: 63
         kelvin: 3600
     - delay: 00:00:05
     - service: light.turn_on
       data:
-        entity_id: group.bedroom_lights
+        entity_id: group.lights_bedroom
         transition: 900
         brightness: 230
         kelvin: 4200
+
+downstairs_lights_on:
+  alias: Downstairs Lights On
+  sequence:
+    - service: scene.turn_on
+      data_template:
+        entity_id: >
+          scene.downstairs_
+          {%-  if now().hour < 7 %}night
+          {% elif now().hour < 17 %}daylight
+          {% elif now().hour < 19 %}evening
+          {% elif now().hour >= 21 %}night
+          {% endif %}
+
+climate_run_fan_hour:
+  alias: Run HVAC Fan
+  sequence:
+    - service: climate.set_fan_mode
+      data:
+        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+        fan_mode: 'On Low'
+    - delay: 01:00:00
+    - service: climate.set_fan_mode
+      data:
+        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+        fan_mode: 'Auto Low'

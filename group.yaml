@@ -6,17 +6,76 @@
 #
 # Gathering and ordering displays and switches
 
-Clock:
-  - sensor.time
-  - sensor.date
-  - sun.sun
-Weather:
-  - sensor.dark_sky_summary
-  - sensor.dark_sky_hourly_summary
-  - sensor.dark_sky_daily_summary
+default_view:
+  name: Home
+  icon: mdi:home
+  view: yes
+  entities:
+    - group.clock
+    - group.lights_downstairs
+    - group.scenes_downstairs
+    - group.lights_bedroom
+    - group.lights_upstairs
+    - group.scenes_upstairs
+    - group.climate
+
+lights_downstairs:
+  name: Downstairs Lights
+  entities:
+    -  light.workstation
+    -  light.kitchen
+    -  light.living_room_overhead
+    -  switch.ge_unknown_type5052_id3031_switch_3_0
+    -  switch.ge_unknown_type5052_id3031_switch_4_0
+    -  switch.ge_unknown_type5052_id3031_switch_2_0
+lights_bedroom:
+  name: Bedroom Lights
+  entities:
+    - light.bedroom_a
+    - light.bedroom_b
+lights_upstairs:
+  name: Upstairs Lights
+  entities:
+    - light.workshop
+    - switch.switch_6_0
+scenes_downstairs:
+  name: Downstairs Scenes
+  entities:
+    - scene.downstairs_daylight
+    - scene.downstairs_afternoon
+    - scene.downstairs_evening
+    - scene.downstairs_night
+scenes_upstairs:
+  name: Upstairs Scenes
+  entities:
+    - scene.daylight
+    - scene.evening
+    - scene.candlelight
+clock:
+  name: Clock
+  entities:
+    - sensor.time
+    - sensor.date
+    - sun.sun
+climate:
+  name: Climate
+  entities:
+    - sensor.2gig_technologies_ct101_thermostat_iris_temperature_5_1
+    - climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+    - climate.2gig_technologies_ct101_thermostat_iris_heating_1_5_1
+
+weather:
+  name: Weather
+  icon: mdi:cloud
+  view: yes
+  entities:
+    - group.weather_main
+    - group.weather_aux
+weather_main:
+  name: Currently
+  entities:
   - sensor.dark_sky_temperature
-  - sensor.dark_sky_daily_high_temperature
-  - sensor.dark_sky_daily_low_temperature
+  - sensor.dark_sky_pressure
   - sensor.dark_sky_apparent_temperature
   - sensor.dark_sky_humidity
   - sensor.dark_sky_dew_point
@@ -25,32 +84,50 @@ Weather:
   - sensor.dark_sky_visibility
   - sensor.dark_sky_precip
   - sensor.dark_sky_precip_intensity
+weather_aux:
+  name: Forecast
+  entities:
+  - sensor.dark_sky_summary
+  - sensor.dark_sky_hourly_summary
   - sensor.dark_sky_precip_probability
-3D Printer:
-  - camera.printer_camera
-  - binary_sensor.octoprint_printing
-  - binary_sensor.octoprint_printing_error
-  - sensor.octoprint_current_state
-  - sensor.octoprint_job_percentage
-  - sensor.octoprint_actual_bed_temp
-  - sensor.octoprint_target_bed_temp
-  - sensor.octoprint_actual_tool0_temp
-  - sensor.octoprint_target_tool0_temp
-  - weblink.octopi_home
-Downstairs Lights:
-  -  light.workstation
-  -  light.kitchen
-  -  light.living_room_overhead
-  -  switch.ge_unknown_type5052_id3031_switch_3_0
-  -  switch.ge_unknown_type5052_id3031_switch_4_0
-Bedroom Lights:
-  -  light.bedroom_a
-  -  light.bedroom_b
-Downstairs Scenes:
-  - scene.full
-  - scene.low
-  - scene.blue
-Upstairs Scenes:
-  - scene.daylight
-  - scene.evening
-  - scene.candlelight
+  - sensor.dark_sky_daily_high_temperature
+  - sensor.dark_sky_daily_low_temperature
+  - sensor.dark_sky_daily_summary
+
+printer_view:
+  name: 3D Printer
+  icon: mdi:printer
+  view: yes
+  entities:
+    - group.printer_cam
+    - group.printer_link
+    - group.printer_status
+printer_cam:
+  name: Camera
+  entities:
+    - camera.printer_camera
+printer_link:
+  name: OctoPi
+  entities:
+    - weblink.octopi_home
+    - light.workshop
+printer_status:
+  name: Printer Status
+  entities:
+    - binary_sensor.octoprint_printing
+    - binary_sensor.octoprint_printing_error
+    - sensor.octoprint_current_state
+    - sensor.octoprint_job_percentage
+    - sensor.octoprint_actual_bed_temp
+    - sensor.octoprint_target_bed_temp
+    - sensor.octoprint_actual_tool0_temp
+    - sensor.octoprint_target_tool0_temp
+
+auto_view:
+  name: Auto # Couldn't come up with a better name for "scripts, automations, other"
+  icon: mdi:settings
+  view: yes
+  entities:
+    - group.all_automations
+    - group.all_scripts
+    - group.all_devices

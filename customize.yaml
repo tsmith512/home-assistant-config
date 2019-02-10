@@ -13,78 +13,58 @@ sun.sun:
 # DARK SKY
 sensor.dark_sky_summary:
   friendly_name: Currently
-  haaska_hidden: true
+sensor.dark_sky_icon:
+  hidden: true
 sensor.dark_sky_hourly_summary:
   friendly_name: Today
-  haaska_hidden: true
 sensor.dark_sky_daily_summary:
   friendly_name: This Week
-  haaska_hidden: true
 sensor.dark_sky_temperature:
   friendly_name: Temperature
-  haaska_hidden: true
+sensor.dark_sky_pressure:
+  friendly_name: Pressure
 sensor.dark_sky_daily_high_temperature:
   friendly_name: Today's High
-  haaska_hidden: true
 sensor.dark_sky_daily_low_temperature:
   friendly_name: Today's Low
-  haaska_hidden: true
 sensor.dark_sky_apparent_temperature:
   friendly_name: Heat Index / Wind Chill
-  haaska_hidden: true
 sensor.dark_sky_humidity:
   friendly_name: Humidity
-  haaska_hidden: true
 sensor.dark_sky_dew_point:
   friendly_name: Currently
-  haaska_hidden: true
 sensor.dark_sky_wind_speed:
   friendly_name: Wind Speed
-  haaska_hidden: true
 sensor.dark_sky_wind_bearing:
   friendly_name: Wind Direction
-  haaska_hidden: true
 sensor.dark_sky_visibility:
   friendly_name: Visibility
-  haaska_hidden: true
 sensor.dark_sky_precip:
   friendly_name: Precipitiation
-  haaska_hidden: true
 sensor.dark_sky_precip_intensity:
   friendly_name: Precip Intensity
-  haaska_hidden: true
 sensor.dark_sky_precip_probability:
   friendly_name: Precip Probability
-  haaska_hidden: true
 
 # OCTOPRINT
 binary_sensor.octoprint_printing:
   friendly_name: Printing?
-  haaska_hidden: true
 binary_sensor.octoprint_printing_error:
   friendly_name: Error Reported?
-  haaska_hidden: true
 sensor.octoprint_actual_bed_temp:
   friendly_name: Bed Temp
-  haaska_hidden: true
 sensor.octoprint_actual_tool0_temp:
   friendly_name: Hotend Temp
-  haaska_hidden: true
 sensor.octoprint_current_state:
   friendly_name: Currently
-  haaska_hidden: true
 sensor.octoprint_job_percentage:
   friendly_name: Complete
-  haaska_hidden: true
 sensor.octoprint_target_bed_temp:
   friendly_name: Target Bed Temp
-  haaska_hidden: true
 sensor.octoprint_target_tool0_temp:
   friendly_name: Target Hotend Temp
-  haaska_hidden: true
 camera.mjpeg_camera:
   friendly_name: Printbed Camera
-  haaska_hidden: true
 
 # ZWAVE SWITCHES
 switch.ge_unknown_type5052_id3031_switch_2_0:
@@ -96,6 +76,20 @@ switch.ge_unknown_type5052_id3031_switch_3_0:
 switch.ge_unknown_type5052_id3031_switch_4_0:
   friendly_name: Entertainment Shelf Lights
   icon: mdi:movie
+switch.switch_6_0:
+  friendly_name: Christmas Lights
+  icon: mdi:pine-tree
+
+# ZWAVE THERMOSTAT
+sensor.2gig_technologies_ct101_thermostat_iris_temperature_5_1:
+  friendly_name: Indoor Temperature
+  icon: mdi:temperature-fahrenheit
+climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2:
+  friendly_name: A/C
+  icon: mdi:snowflake
+climate.2gig_technologies_ct101_thermostat_iris_heating_1_5_1:
+  friendly_name: Heater
+  icon: mdi:fire
 
 # LIFX BULBS
 light.workstation:
@@ -117,21 +111,22 @@ light.living_room_overhead:
   icon: mdi:movie
 
 # GROUPS
-group.all_lights:
-  haaska_hidden: true
-group.all_switches:
-  haaska_hidden: true
 group.all_devices:
-  haaska_hidden: true
+  friendly_name: Devices
+  hidden: false
+group.all_automations:
+  friendly_name: Automations
+  hidden: false
+group.all_scripts:
+  friendly_name: Scripts
+  hidden: false
 group.clock:
-  haaska_hidden: true
-group.time_warner_cable:
   haaska_hidden: true
 group.weather:
   haaska_hidden: true
-group.downstairs_lights:
+group.lights_downstairs:
   haaska_name: Downstairs
-group.bedroom_lights:
+group.lights_bedroom:
   haaska_name: Bedroom
 group.downstairs_scenes:
   haaska_hidden: true
@@ -139,6 +134,10 @@ group.downstairs_scenes:
 group.upstairs_scenes:
   haaska_hidden: true
   icon: mdi:numeric-2-box
+group.auto_view:
+  haaska_hidden: true
+group.climate:
+  haaska_hidden: true
 
 # SCENES
 scene.daylight:
@@ -147,14 +146,21 @@ scene.evening:
   icon: mdi:white-balance-incandescent
 scene.candlelight:
   icon: mdi:weather-night
-scene.full:
-  icon: mdi:white-balance-sunny
-scene.low:
-  icon: mdi:white-balance-incandescent
-scene.blue:
-  icon: mdi:white-balance-iridescent
+scene.downstairs_daylight:
+  icon: mdi:weather-sunny
+scene.downstairs_afternoon:
+  icon: mdi:weather-sunset
+scene.downstairs_evening:
+  icon: mdi:weather-sunset-down
+scene.downstairs_night:
+  icon: mdi:weather-night
+
+# SCRIPTS
 script.upstairs_sunrise:
   icon: mdi:weather-sunset-up
+script.climate_run_fan_hour:
+  haaska_hidden: false
+  hasska_name: fan
 
 # MISC
 weblink.octopi_home:
