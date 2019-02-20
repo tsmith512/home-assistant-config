@@ -52,10 +52,10 @@ climate_run_fan_hour:
   sequence:
     - service: climate.set_fan_mode
       data:
-        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1
         fan_mode: 'On Low'
     - delay: 01:00:00
     - service: climate.set_fan_mode
       data:
-        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2
+        entity_id: climate.2gig_technologies_ct101_thermostat_iris_cooling_1
         fan_mode: 'Auto Low'
