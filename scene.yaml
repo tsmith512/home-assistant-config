@@ -23,9 +23,9 @@
       transition: 2
       kelvin: 3800
       brightness: 216
-    zwave.ge_unknown_type_5052_id_3031_2:
+    switch.ge_unknown_type_5052_id_3031_switch_2:
       state: on
-    zwave.ge_unknown_type_5052_id_3031_3:
+    switch.ge_unknown_type_5052_id_3031_switch_3:
       state: on
 - name: Downstairs Afternoon
   entities:
@@ -44,9 +44,9 @@
       transition: 5
       kelvin: 3200
       brightness: 165
-    zwave.ge_unknown_type_5052_id_3031_2:
+    switch.ge_unknown_type_5052_id_3031_switch_2:
       state: on
-    zwave.ge_unknown_type_5052_id_3031_3:
+    switch.ge_unknown_type_5052_id_3031_switch_3:
       state: on
 - name: Downstairs Evening
   entities:
@@ -65,9 +65,9 @@
       transition: 5
       kelvin: 3000
       brightness: 140
-    zwave.ge_unknown_type_5052_id_3031_2:
+    switch.ge_unknown_type_5052_id_3031_switch_2:
       state: on
-    zwave.ge_unknown_type_5052_id_3031_3:
+    switch.ge_unknown_type_5052_id_3031_switch_3:
       state: on
 - name: Downstairs Night
   entities:
@@ -86,30 +86,9 @@
       transition: 5
       kelvin: 2800
       brightness: 80
-    zwave.ge_unknown_type_5052_id_3031_2:
+    switch.ge_unknown_type_5052_id_3031_switch_2:
       state: on
-    zwave.ge_unknown_type_5052_id_3031_3:
-      state: on
-- name: Blue
-  entities:
-    light.workstation:
-      state: on
-      transition: 2
-      brightness: 150
-      rgb_color: [15, 30, 160]
-    light.kitchen:
-      state: on
-      transition: 2
-      brightness: 150
-      rgb_color: [15, 30, 160]
-    light.living_room_overhead:
-      state: on
-      transition: 2
-      brightness: 150
-      rgb_color: [15, 30, 160]
-    zwave.ge_unknown_type_5052_id_3031_2:
-      state: on
-    zwave.ge_unknown_type_5052_id_3031_3:
+    switch.ge_unknown_type_5052_id_3031_switch_3:
       state: on
 
 # UPSTAIRS SCENES

@@ -67,27 +67,30 @@ camera.mjpeg_camera:
   friendly_name: Printbed Camera
 
 # ZWAVE SWITCHES
-zwave.ge_unknown_type_5052_id_3031:
+switch.ge_unknown_type_5052_id_3031_switch:
   friendly_name: Desk Light
   icon: mdi:desktop-mac
-zwave.ge_unknown_type_5052_id_3031_2:
+switch.ge_unknown_type_5052_id_3031_switch_2:
   friendly_name: Living Room Lamp
   icon: mdi:movie
-zwave.ge_unknown_type_5052_id_3031_3:
+switch.ge_unknown_type_5052_id_3031_switch_3:
   friendly_name: Entertainment Shelf Lights
   icon: mdi:movie
-zwave.ge_12719_plug_in_smart_switch:
+switch.ge_12719_plug_in_smart_switch_switch:
   friendly_name: Christmas Lights
   icon: mdi:pine-tree
 
 # ZWAVE THERMOSTAT
-sensor.2gig_technologies_ct101_thermostat_iris_temperature_5_1:
+sensor.2gig_technologies_ct101_thermostat_iris_temperature:
   friendly_name: Indoor Temperature
   icon: mdi:temperature-fahrenheit
-climate.2gig_technologies_ct101_thermostat_iris_cooling_1_5_2:
+sensor.2gig_technologies_ct101_thermostat_iris_relative_humidity:
+  friendly_name: Indoor Humidity
+  icon: mdi:water-percent
+climate.2gig_technologies_ct101_thermostat_iris_cooling_1:
   friendly_name: A/C
   icon: mdi:snowflake
-climate.2gig_technologies_ct101_thermostat_iris_heating_1_5_1:
+climate.2gig_technologies_ct101_thermostat_iris_heating_1:
   friendly_name: Heater
   icon: mdi:fire
 

@@ -44,9 +44,8 @@
 
 - alias: Downstairs Sunlight
   trigger:
-    - platform: time
-      minutes: 00
-      seconds: 00
+    - platform: time_pattern
+      minutes: 1
   condition:
     # Test two lights, in case one is offline
     condition: or
@@ -70,7 +69,7 @@
   action:
     service_template: >
       switch.turn_{% if states('sun.sun') == "above_horizon" %}on{% else %}off{% endif %}
-    entity_id: zwave.ge_12719_plug_in_smart_switch
+    entity_id: switch.ge_12719_plug_in_smart_switch_switch
 
 # OCTOPRINT
 - alias: Notify on Print Complete
