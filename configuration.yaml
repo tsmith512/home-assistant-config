@@ -11,6 +11,9 @@
 
 homeassistant:
   name: Home
+  auth_providers:
+    - type: legacy_api_password
+      api_password: !secret http_password
   latitude: !secret loc_latitude
   longitude: !secret loc_longitude
   elevation: 188
@@ -68,7 +71,7 @@ tts:
 ### STARTER COMPONENTS
 
 http:
-  api_password: !secret http_password
+  # api_password: !secret http_password
   ssl_certificate: /home/homeassistant/.homeassistant/cert.pem
   ssl_key: /home/homeassistant/.homeassistant/key.pem
 
