@@ -87,12 +87,9 @@ sensor.2gig_technologies_ct101_thermostat_iris_temperature:
 sensor.2gig_technologies_ct101_thermostat_iris_relative_humidity:
   friendly_name: Indoor Humidity
   icon: mdi:water-percent
-climate.2gig_technologies_ct101_thermostat_iris_cooling_1:
-  friendly_name: A/C
+climate.2gig_technologies_ct101_thermostat_iris_mode:
+  friendly_name: HVAC
   icon: mdi:snowflake
-climate.2gig_technologies_ct101_thermostat_iris_heating_1:
-  friendly_name: Heater
-  icon: mdi:fire
 
 # LIFX BULBS
 light.workstation:

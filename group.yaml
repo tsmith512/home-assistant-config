@@ -69,8 +69,7 @@ hvac:
   name: HVAC
   control: hidden
   entities:
-    - climate.2gig_technologies_ct101_thermostat_iris_cooling_1 # The air conditioner
-    - climate.2gig_technologies_ct101_thermostat_iris_heating_1 # The heater
+    - climate.2gig_technologies_ct101_thermostat_iris_mode # The thermostat
     - sensor.2gig_technologies_ct101_thermostat_iris_temperature # Current Temperature
     - sensor.2gig_technologies_ct101_thermostat_iris_relative_humidity # Indoor humidity
     - sensor.2gig_technologies_ct101_thermostat_iris_temperature_2 # ... Other ... current temperature?

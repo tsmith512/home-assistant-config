@@ -48,9 +48,8 @@ discovery:
 # Enables support for tracking state changes over time
 history:
 
-# Text to speech
-tts:
-  - platform: google
+# System Health
+system_health:
 
 ### STARTER COMPONENTS
 
