@@ -123,24 +123,14 @@ group.all_automations:
 group.all_scripts:
   friendly_name: Scripts
   hidden: false
-group.clock:
-  haaska_hidden: true
-group.weather:
-  haaska_hidden: true
 group.lights_downstairs:
   haaska_name: Downstairs
 group.lights_bedroom:
   haaska_name: Bedroom
 group.downstairs_scenes:
-  haaska_hidden: true
   icon: mdi:numeric-1-box
 group.upstairs_scenes:
-  haaska_hidden: true
   icon: mdi:numeric-2-box
-group.auto_view:
-  haaska_hidden: true
-group.climate:
-  haaska_hidden: true
 
 # SCENES
 scene.daylight:
@@ -162,7 +152,6 @@ scene.downstairs_night:
 script.upstairs_sunrise:
   icon: mdi:weather-sunset-up
 script.climate_run_fan_hour:
-  haaska_hidden: false
   hasska_name: fan
 
 # MISC
