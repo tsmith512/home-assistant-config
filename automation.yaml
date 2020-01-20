@@ -59,18 +59,6 @@
   action:
     - service: script.downstairs_lights_on
 
-- alias: Christmas Lights Auto
-  trigger:
-  - platform: time
-    at: "01:00:00"
-  - platform: sun
-    event: sunset
-    offset: '-00:30:00'
-  action:
-    service_template: >
-      switch.turn_{% if states('sun.sun') == "above_horizon" %}on{% else %}off{% endif %}
-    entity_id: switch.ge_12719_plug_in_smart_switch_switch
-
 # OCTOPRINT
 - alias: Notify on Print Complete
   trigger:

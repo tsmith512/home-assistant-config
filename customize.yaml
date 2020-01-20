@@ -77,8 +77,8 @@ switch.ge_unknown_type_5052_id_3031_switch_3:
   friendly_name: Entertainment Shelf Lights
   icon: mdi:movie
 switch.ge_12719_plug_in_smart_switch_switch:
-  friendly_name: Christmas Lights
-  icon: mdi:pine-tree
+  friendly_name: Bedroom Shelf Lights
+  icon: mdi:bookshelf
 
 # ZWAVE THERMOSTAT
 sensor.2gig_technologies_ct101_thermostat_iris_temperature:

@@ -34,12 +34,12 @@ lights_bedroom:
   entities:
     - light.bedroom_a
     - light.bedroom_b
+    - switch.ge_12719_plug_in_smart_switch_switch
 
 lights_upstairs:
   name: Upstairs Lights
   entities:
     - light.workshop
-    - switch.ge_12719_plug_in_smart_switch_switch
 
 scenes_downstairs:
   name: Downstairs Scenes
