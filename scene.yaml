@@ -6,7 +6,7 @@
 # Preset scenes for LIFX and ZWave lights
 
 # DOWNSTAIRS SCENES
-- name: Downstairs Daylight
+- name: Daylight Downstairs
   entities:
     light.workstation:
       state: on
@@ -23,32 +23,13 @@
       transition: 2
       kelvin: 3800
       brightness: 216
+    switch.ge_unknown_type_5052_id_3031_switch:
+      state: on
     switch.ge_unknown_type_5052_id_3031_switch_2:
       state: on
     switch.ge_unknown_type_5052_id_3031_switch_3:
       state: on
-- name: Downstairs Afternoon
-  entities:
-    light.workstation:
-      state: on
-      transition: 5
-      kelvin: 3200
-      brightness: 165
-    light.kitchen:
-      state: on
-      transition: 5
-      kelvin: 3200
-      brightness: 165
-    light.living_room_overhead:
-      state: on
-      transition: 5
-      kelvin: 3200
-      brightness: 165
-    switch.ge_unknown_type_5052_id_3031_switch_2:
-      state: on
-    switch.ge_unknown_type_5052_id_3031_switch_3:
-      state: on
-- name: Downstairs Evening
+- name: Evening Downstairs
   entities:
     light.workstation:
       state: on
@@ -65,11 +46,13 @@
       transition: 5
       kelvin: 3000
       brightness: 140
+    switch.ge_unknown_type_5052_id_3031_switch:
+      state: on
     switch.ge_unknown_type_5052_id_3031_switch_2:
       state: on
     switch.ge_unknown_type_5052_id_3031_switch_3:
       state: on
-- name: Downstairs Night
+- name: Night Downstairs
   entities:
     light.workstation:
       state: on
@@ -86,30 +69,34 @@
       transition: 5
       kelvin: 2800
       brightness: 80
+    switch.ge_unknown_type_5052_id_3031_switch:
+      state: on
     switch.ge_unknown_type_5052_id_3031_switch_2:
       state: on
     switch.ge_unknown_type_5052_id_3031_switch_3:
       state: on
 
 # UPSTAIRS SCENES
-- name: Daylight
+- name: Daylight Upstairs
   entities:
     group.lights_bedroom:
       state: on
       transition: 2
       brightness: 230
       kelvin: 4200
-- name: Evening
+- name: Evening Upstairs
   entities:
     group.lights_bedroom:
       state: on
       transition: 2
       brightness: 93
       kelvin: 3000
-- name: Candlelight
+- name: Night Upstairs
   entities:
     group.lights_bedroom:
       state: on
       transition: 10
       brightness: 51
       kelvin: 2700
+    switch.ge_12719_plug_in_smart_switch_switch:
+      state: off

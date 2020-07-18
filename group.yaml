@@ -45,17 +45,16 @@ scenes_downstairs:
   name: Downstairs Scenes
   control: hidden
   entities:
-    - scene.downstairs_daylight
-    - scene.downstairs_afternoon
-    - scene.downstairs_evening
-    - scene.downstairs_night
+    - scene.daylight_downstairs
+    - scene.evening_downstairs
+    - scene.night_downstairs
 
 scenes_upstairs:
   name: Upstairs Scenes
   entities:
-    - scene.daylight
-    - scene.evening
-    - scene.candlelight
+    - scene.daylight_upstairs
+    - scene.evening_upstairs
+    - scene.candlelight_upstairs
 
 clock:
   name: Clock
