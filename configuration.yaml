@@ -112,6 +112,16 @@ notify:
     api_key: !secret pushbullet_api
     name: pushbullet
 
+switch:
+  - platform: command_line
+    switches:
+      warp_core:
+        command_on: /usr/bin/ssh pi@enterprise warp/start.sh
+        command_off: /usr/bin/ssh pi@enterprise warp/stop.sh
+        command_state: /usr/bin/ssh pi@enterprise warp/status.sh
+        value_template: '{{ value == "warp-core.mp3" }}'
+        friendly_name: Warp Core
+
 
 ### EXTERNAL CONFIGURATION SECTIONS
 

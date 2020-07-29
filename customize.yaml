@@ -154,3 +154,5 @@ script.climate_run_fan_hour:
 # MISC
 weblink.octopi_home:
   icon: mdi:link-variant
+switch.warp_core:
+  icon: mdi:ufo-outline
