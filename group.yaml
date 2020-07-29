@@ -15,7 +15,6 @@ default_view:
     - group.lights_downstairs
     - group.scenes_downstairs
     - group.lights_bedroom
-    - group.lights_upstairs
     - group.scenes_upstairs
     - group.hvac
 
@@ -25,6 +24,7 @@ lights_downstairs:
     - light.workstation
     - switch.ge_unknown_type_5052_id_3031_switch # Desk Light
     - light.kitchen
+    - light.kitchen2
     - light.living_room_overhead
     - switch.ge_unknown_type_5052_id_3031_switch_2 # Living Room Lamps
     - switch.ge_unknown_type_5052_id_3031_switch_3 # Shelf Lights
@@ -36,11 +36,6 @@ lights_bedroom:
     - light.bedroom_b
     - switch.ge_12719_plug_in_smart_switch_switch
     - switch.warp_core
-
-lights_upstairs:
-  name: Upstairs Lights
-  entities:
-    - light.workshop
 
 scenes_downstairs:
   name: Downstairs Scenes

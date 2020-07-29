@@ -18,6 +18,11 @@
       transition: 2
       kelvin: 3800
       brightness: 216
+    light.kitchen2:
+      state: on
+      transition: 2
+      kelvin: 3800
+      brightness: 216
     light.living_room_overhead:
       state: on
       transition: 2
@@ -41,6 +46,11 @@
       transition: 5
       kelvin: 3000
       brightness: 140
+    light.kitchen2:
+      state: on
+      transition: 5
+      kelvin: 3000
+      brightness: 140
     light.living_room_overhead:
       state: on
       transition: 5
@@ -58,6 +68,9 @@
       state: off
       transition: 5
     light.kitchen:
+      state: off
+      transition: 5
+    light.kitchen2:
       state: off
       transition: 5
     light.living_room_overhead:
