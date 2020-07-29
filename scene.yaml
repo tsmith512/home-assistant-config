@@ -55,20 +55,14 @@
 - name: Night Downstairs
   entities:
     light.workstation:
-      state: on
+      state: off
       transition: 5
-      kelvin: 2800
-      brightness: 80
     light.kitchen:
-      state: on
+      state: off
       transition: 5
-      kelvin: 2800
-      brightness: 80
     light.living_room_overhead:
-      state: on
+      state: off
       transition: 5
-      kelvin: 2800
-      brightness: 80
     switch.ge_unknown_type_5052_id_3031_switch:
       state: on
     switch.ge_unknown_type_5052_id_3031_switch_2:
