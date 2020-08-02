@@ -98,9 +98,6 @@ light.workstation:
 light.kitchen:
   friendly_name: Kitchen Light
   icon: mdi:food-fork-drink
-light.kitchen2:
-  friendly_name: Kitchen Light (Replacement)
-  icon: mdi:food-fork-drink
 light.bedroom_a:
   friendly_name: Bedside Lamp N
   icon: mdi:hotel

@@ -24,7 +24,6 @@ lights_downstairs:
     - light.workstation
     - switch.ge_unknown_type_5052_id_3031_switch # Desk Light
     - light.kitchen
-    - light.kitchen2
     - light.living_room_overhead
     - switch.ge_unknown_type_5052_id_3031_switch_2 # Living Room Lamps
     - switch.ge_unknown_type_5052_id_3031_switch_3 # Shelf Lights
