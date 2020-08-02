@@ -78,6 +78,8 @@
       transition: 2
       brightness: 230
       kelvin: 4200
+    switch.warp_core:
+      state: off
 - name: Evening Upstairs
   entities:
     group.lights_bedroom:
@@ -85,6 +87,8 @@
       transition: 2
       brightness: 93
       kelvin: 3000
+    switch.warp_core:
+      state: on
 - name: Night Upstairs
   entities:
     group.lights_bedroom:
@@ -94,3 +98,5 @@
       kelvin: 2700
     switch.ge_12719_plug_in_smart_switch_switch:
       state: off
+    switch.warp_core:
+      state: on
