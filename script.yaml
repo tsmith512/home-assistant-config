@@ -40,11 +40,11 @@ downstairs_lights_on:
     - service: scene.turn_on
       data_template:
         entity_id: >
-          scene.downstairs_
-          {%-  if now().hour < 7 %}night
-          {% elif now().hour < 17 %}daylight
-          {% elif now().hour < 19 %}evening
-          {% elif now().hour >= 21 %}night
+          scene.
+          {%-  if now().hour < 7 %}night_downstairs
+          {% elif now().hour < 17 %}daylight_downstairs
+          {% elif now().hour < 19 %}evening_downstairs
+          {% elif now().hour >= 21 %}night_downstairs
           {% endif %}
 
 climate_run_fan_hour:

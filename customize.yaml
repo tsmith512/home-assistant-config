@@ -144,6 +144,8 @@ scene.downstairs_evening:
   icon: mdi:weather-sunset-down
 scene.downstairs_night:
   icon: mdi:weather-night
+scene.sleep:
+  icon: mdi:weather-night
 
 # SCRIPTS
 script.upstairs_sunrise:

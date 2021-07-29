@@ -71,3 +71,50 @@
     data:
       message: Octoprint has stopped printing.
       title: Octoprint
+
+# REMOTES
+- alias: Remote button for Returning Home
+  trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_limited_zwa003_nanomote_quad
+      scene_id: 4
+      scene_data: 7680
+  action:
+  - service: script.downstairs_lights_on
+- alias: Remote button for Daylight Downstairs
+  trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_limited_zwa003_nanomote_quad
+      scene_id: 1
+      scene_data: 7680
+  action:
+  - service: scene.turn_on
+    entity_id: scene.daylight_downstairs
+- alias: Remote button for Leave
+  trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_limited_zwa003_nanomote_quad
+      scene_id: 3
+      scene_data: 7680
+  action:
+  - service: scene.turn_on
+    entity_id: scene.leave
+- alias: Remote button for Goodnight
+  trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.aeotec_limited_zwa003_nanomote_quad
+      scene_id: 2
+      scene_data: 7680
+  action:
+  - service: homeassistant.turn_off
+    entity_id: group.lights_downstairs
+  - service: scene.turn_on
+    entity_id: scene.night_upstairs

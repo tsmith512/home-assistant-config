@@ -56,13 +56,13 @@
   entities:
     light.workstation:
       state: off
-      transition: 5
+      transition: 10
     light.kitchen:
       state: off
-      transition: 5
+      transition: 10
     light.living_room_overhead:
       state: off
-      transition: 5
+      transition: 10
     switch.ge_unknown_type_5052_id_3031_switch:
       state: on
     switch.ge_unknown_type_5052_id_3031_switch_2:
@@ -75,7 +75,7 @@
   entities:
     group.lights_bedroom:
       state: on
-      transition: 2
+      transition: 10
       brightness: 230
       kelvin: 4200
     switch.warp_core:
@@ -84,7 +84,7 @@
   entities:
     group.lights_bedroom:
       state: on
-      transition: 2
+      transition: 10
       brightness: 93
       kelvin: 3000
     switch.warp_core:
@@ -94,9 +94,31 @@
     group.lights_bedroom:
       state: on
       transition: 10
-      brightness: 51
+      brightness: 50
       kelvin: 2700
     switch.ge_12719_plug_in_smart_switch_switch:
-      state: off
+      state: on
     switch.warp_core:
       state: on
+
+# GENERAL UTILITY SCENES
+- name: Leave
+  entities:
+    group.lights_bedroom:
+      state: off
+      transition: 15
+    group.lights_downstairs:
+      state: off
+      transition: 15
+    switch.warp_core:
+      state: off
+- name: Sleep
+  entities:
+    group.lights_bedroom:
+      state: off
+      transition: 15
+    group.lights_downstairs:
+      state: off
+      transition: 15
+    switch.warp_core:
+      state:on

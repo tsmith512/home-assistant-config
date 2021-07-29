@@ -16,7 +16,13 @@ default_view:
     - group.scenes_downstairs
     - group.lights_bedroom
     - group.scenes_upstairs
+    - group.other_switches
     - group.hvac
+
+other_switches:
+  name: Switches
+  entities:
+    - switch.warp_core
 
 lights_downstairs:
   name: Downstairs Lights
@@ -34,7 +40,6 @@ lights_bedroom:
     - light.bedroom_a
     - light.bedroom_b
     - switch.ge_12719_plug_in_smart_switch_switch
-    - switch.warp_core
 
 scenes_downstairs:
   name: Downstairs Scenes
@@ -50,6 +55,7 @@ scenes_upstairs:
     - scene.daylight_upstairs
     - scene.evening_upstairs
     - scene.candlelight_upstairs
+    - scene.sleep
 
 clock:
   name: Clock
